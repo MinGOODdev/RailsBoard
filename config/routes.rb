@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post 'home/create', as: 'posts'
 
   get 'home/edit/:post_id' => 'home#edit', as: 'edit_post'  # as For View Helper
-  post 'home/update/:post_id' => 'home#update', as: 'post'
+  patch 'home/update/:post_id' => 'home#update', as: 'post'
 
   get 'home/destroy/:post_id' => 'home#destroy', as: 'post_destroy'
 

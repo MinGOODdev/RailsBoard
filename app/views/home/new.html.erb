@@ -1,6 +1,6 @@
 <h1>Home#new</h1>
 <h1>form_for</h1>
-<%= form_for(Post.new, url: posts_path, method: 'post') do |f| %>
+<%= form_for(@post, url: posts_path, method: 'post') do |f| %>
   <%= f.label :title, '제목' %>
   <%= f.text_field :title %><br><br>
   <%= f.label :content, '내용' %>
