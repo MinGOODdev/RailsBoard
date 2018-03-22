@@ -1,0 +1,19 @@
+<h1>Home#index</h1>
+
+<% @posts.each do |post| %>
+  제목: <%= post.title %><br>
+  내용: <%= post.content %><br>
+
+  <a href="/home/destroy/<%= post.id %>">[삭제1]</a><br>
+  <!-- View Helper -->
+  <%= link_to "[삭제2]", post_destroy_path(post_id: post.id) %><br>
+
+  <a href="/home/edit/<%= post.id %>">[수정1]</a><br>
+  <!-- View Helper -->
+  <%= link_to post_edit_path(post_id: post.id) do %>
+    <button>[수정2]</button><br>
+  <% end %>
+
+<% end %>
+
+<a href="/home/new">글쓰기</a>
