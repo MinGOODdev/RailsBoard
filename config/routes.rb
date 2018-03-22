@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   # get 'home/index' => 'home#index' 화살표 전과 후의 text가 같다면 생략 가능
 
   get 'home/new'
-  post 'home/create'
+  post 'home/create', as: 'posts'
 
-  get 'home/edit/:post_id' => 'home#edit', as: 'post_edit'  # as For View Helper
-  post 'home/update/:post_id' => 'home#update'
+  get 'home/edit/:post_id' => 'home#edit', as: 'edit_post'  # as For View Helper
+  post 'home/update/:post_id' => 'home#update', as: 'post'
 
   get 'home/destroy/:post_id' => 'home#destroy', as: 'post_destroy'
 

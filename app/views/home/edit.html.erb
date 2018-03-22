@@ -1,11 +1,18 @@
 <h1>Home#new</h1>
 <form action='/home/update/<%= @post.id %>' method='post'>
-
   <!-- CSRF 공격을 방지하는 토큰 -->
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
   제목: <input type="text" name="post_title" value="<%= @post.title %>"><br><br>
   내용: <textarea name="post_content"><%= @post.content %></textarea><br>
   <input type="submit" value="수정">
-
 </form>
+
+
+<h1>form_tag</h1>
+<%= form_tag(post_path, method: 'put') do %>
+  <%= label_tag 'post_title', '제목' %>
+  <%= text_field_tag 'post_title', @post.title %><br><br>
+  <%= label_tag 'post_content', '내용' %>
+  <%= text_area_tag 'post_content', @post.content %><br>
+  <%= submit_tag '수정' %>
+<% end %>
