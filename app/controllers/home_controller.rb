@@ -10,8 +10,10 @@ class HomeController < ApplicationController
 
   def create
     post = Post.new
-    post.title = params[:post_title]       # post_title이라는 이름의 내용을 title에 저장
-    post.content = params[:post_content]
+    # post.title = params[:post_title]       # post_title이라는 이름의 내용을 title에 저장
+    # post.content = params[:post_content]
+    post.title = params[:post][:title]
+    post.content = params[:post][:content]
     post.save
     redirect_to '/home/index'
   end
